@@ -76,22 +76,7 @@ export default function App() {
         list.push({ ...docSnap.data() } as Shoot);
       });
       
-      if (list.length === 0 && !hasSeeded) {
-        hasSeeded = true;
-        const mocks = getMockShoots();
-        // Seed state, localStorage, and attempt to seed Firestore
-        setShoots(mocks);
-        
-        mocks.forEach(async (shoot) => {
-          try {
-            await setDoc(doc(db, 'shoots', shoot.id), shoot);
-          } catch (err) {
-            handleFirestoreError(err, OperationType.WRITE, `shoots/${shoot.id}`, false);
-          }
-        });
-      } else {
-        setShoots(list);
-        
+setShoots(list);        
       }
     }, (error) => {
       // Gracefully handle or log "Missing or insufficient permissions" or database not enabled

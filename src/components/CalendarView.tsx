@@ -24,17 +24,22 @@ export default function CalendarView({
   onSelectShoot,
   onAddShoot
 }: CalendarViewProps) {
-  const today = new Date();
+const indiaNow = new Date(
+  new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Kolkata',
+  })
+);
+
+const todayStr = `${indiaNow.getFullYear()}-${String(
+  indiaNow.getMonth() + 1
+).padStart(2, '0')}-${String(indiaNow.getDate()).padStart(2, '0')}`;
 
 const [currentDate, setCurrentDate] = useState<Date>(
-  new Date(today.getFullYear(), today.getMonth(), 1)
+  new Date(indiaNow.getFullYear(), indiaNow.getMonth(), 1)
 );
 
-const [selectedDateStr, setSelectedDateStr] = useState<string>(
-  new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Asia/Kolkata',
-  }).format(today)
-);
+const [selectedDateStr, setSelectedDateStr] =
+  useState<string>(todayStr);
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
 

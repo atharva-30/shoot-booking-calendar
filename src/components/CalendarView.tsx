@@ -34,7 +34,7 @@ const [selectedDateStr, setSelectedDateStr] = useState<string>(
   new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Kolkata',
   }).format(today)
-)
+);
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
 

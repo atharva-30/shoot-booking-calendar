@@ -76,7 +76,6 @@ export default function App() {
       });
       
 setShoots(list);        
-      }
     }, (error) => {
       // Gracefully handle or log "Missing or insufficient permissions" or database not enabled
       handleFirestoreError(error, OperationType.LIST, 'shoots', false);

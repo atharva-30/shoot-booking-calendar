@@ -145,7 +145,9 @@ export default function App() {
 
   // --- Statistics Calculation ---
   const stats: AppStats = useMemo(() => {
-    const todayStr = '2026-07-16'; // Synced relative local time
+    const todayStr = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Kolkata',
+}).format(new Date());
     
     const upcomingCount = shoots.filter(s => !s.isCompleted && s.date >= todayStr).length;
     const todayCount = shoots.filter(s => s.date === todayStr).length;
@@ -164,7 +166,11 @@ export default function App() {
 
   // Alert Badge Count
   const alertCount = useMemo(() => {
-    const todayDate = new Date(2026, 6, 16);
+    const todayDate = new Date(
+  new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Kolkata',
+  })
+);
     return shoots.filter(shoot => {
       if (shoot.isCompleted) return false;
       const [y, m, d] = shoot.date.split('-').map(Number);

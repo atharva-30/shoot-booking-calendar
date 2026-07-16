@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "shoot": {
+      "title": "Shoot",
+      "description": "Represents a photography or videography assignment booking.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "address": { "type": "string" },
+        "shootTime": { "type": "string" },
+        "shootType": { "type": "string" },
+        "submissionDate": { "type": "string" },
+        "clientName": { "type": "string" },
+        "clientContact": { "type": "string" },
+        "teamMembers": { "type": "array" },
+        "date": { "type": "string" },
+        "notes": { "type": "string" },
+        "gearChecklist": { "type": "array" },
+        "isCompleted": { "type": "boolean" },
+        "reminders": { "type": "object" },
+        "attachments": { "type": "array" },
+        "isRecurring": { "type": "boolean" },
+        "recurrenceType": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "date", "shootTime", "shootType"]
+    }
+  },
+  "firestore": {
+    "shoots/{shootId}": {
+      "schema": "shoot",
+      "description": "Collections of photographic/videographic shoot assignments."
+    }
+  }
+}

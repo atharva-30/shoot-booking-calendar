@@ -1,0 +1,6 @@
+{
+  "name": "Photographer Shoot Calendar",
+  "description": "A professional classic white-themed event calendar and shoot management system for photographers and videographers to manage shoots, team members, gear checklists, and payment statuses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

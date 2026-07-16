@@ -33,7 +33,6 @@ import {
   Aperture,
   Menu,
   X,
-  FileText
 } from 'lucide-react';
 
 

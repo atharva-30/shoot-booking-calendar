@@ -36,6 +36,7 @@ import {
 } from 'lucide-react';
 
 
+let hasSeeded = false;
 export default function App() {
   // --- Persistent Storage Logic ---
   // Load initial shoots from localStorage or fall back to high-fidelity mocks immediately

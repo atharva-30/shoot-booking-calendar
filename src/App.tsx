@@ -75,7 +75,8 @@ export default function App() {
         list.push({ ...docSnap.data() } as Shoot);
       });
       
-setShoots(list);        
+setShoots(list); 
+      );
     }, (error) => {
       // Gracefully handle or log "Missing or insufficient permissions" or database not enabled
       handleFirestoreError(error, OperationType.LIST, 'shoots', false);

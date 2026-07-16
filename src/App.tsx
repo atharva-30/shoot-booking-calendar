@@ -67,24 +67,31 @@ export default function App() {
   });
 
   // Sync shoots with Firestore when available, fall back to localStorage on permissions/connection errors
-  useEffect(() => {
-    const q = collection(db, 'shoots');
-    const unsubscribe = onSnapshot(q, (snapshot) => {
+// Sync shoots with Firestore
+useEffect(() => {
+  const q = collection(db, 'shoots');
+
+  const unsubscribe = onSnapshot(
+    q,
+    (snapshot) => {
       const list: Shoot[] = [];
+
       snapshot.forEach((docSnap) => {
-        list.push({ ...docSnap.data() } as Shoot);
+        list.push({
+          id: docSnap.id,
+          ...(docSnap.data() as Omit<Shoot, 'id'>),
+        });
       });
-      
-setShoots(list); 
-      );
-    }, (error) => {
-      // Gracefully handle or log "Missing or insufficient permissions" or database not enabled
+
+      setShoots(list);
+    },
+    (error) => {
       handleFirestoreError(error, OperationType.LIST, 'shoots', false);
-    });
+    }
+  );
 
-    return () => unsubscribe();
-  }, []);
-
+  return () => unsubscribe();
+}, []);
   // Sync default gear checklist template with Firestore when available
   useEffect(() => {
     const unsubscribe = onSnapshot(doc(db, 'settings', 'gear'), (docSnap) => {

@@ -167,11 +167,12 @@ const [selectedDateStr, setSelectedDateStr] =
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
-              onClick={() => {
-                setCurrentDate(new Date(2026, 6, 1)); // Back to July 2026
-                setSelectedDateStr('2026-07-16');
-              }}
-              className="px-3 py-1.5 hover:bg-zinc-50 border border-zinc-200 text-zinc-700 hover:text-zinc-900 text-xs font-mono rounded-xl transition"
+onClick={() => {
+  setCurrentDate(
+    new Date(indiaNow.getFullYear(), indiaNow.getMonth(), 1)
+  );
+  setSelectedDateStr(todayStr);
+}}              className="px-3 py-1.5 hover:bg-zinc-50 border border-zinc-200 text-zinc-700 hover:text-zinc-900 text-xs font-mono rounded-xl transition"
             >
               Today
             </button>
@@ -201,8 +202,8 @@ const [selectedDateStr, setSelectedDateStr] =
             const dayShoots = shootsByDate[dateStr] || [];
             const hasShoots = dayShoots.length > 0;
             const isSelected = dateStr === selectedDateStr;
-            const isToday = dateStr === '2026-07-16';
-            const isPast = dateStr < '2026-07-16';
+            const isToday = dateStr === todayStr;
+            const isPast = dateStr < todayStr;
 
             // Determine border color for completed/shoot types
             let borderClass = 'border-zinc-200';

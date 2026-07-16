@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Shoot, AppStats, ViewMode } from './types';
-import { getMockShoots, exportToCSV } from './utils';
+import { exportToCSV } from './utils';
 import { 
   collection, 
   onSnapshot, 
@@ -36,7 +36,6 @@ import {
   FileText
 } from 'lucide-react';
 
-let hasSeeded = false;
 
 export default function App() {
   // --- Persistent Storage Logic ---

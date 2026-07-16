@@ -24,10 +24,17 @@ export default function CalendarView({
   onSelectShoot,
   onAddShoot
 }: CalendarViewProps) {
-  const today = new Date(2026, 6, 16); // Syncing with July 16, 2026
-  const [currentDate, setCurrentDate] = useState<Date>(new Date(2026, 6, 1)); // Start of July 2026
-  const [selectedDateStr, setSelectedDateStr] = useState<string>('2026-07-16');
+  const today = new Date();
 
+const [currentDate, setCurrentDate] = useState<Date>(
+  new Date(today.getFullYear(), today.getMonth(), 1)
+);
+
+const [selectedDateStr, setSelectedDateStr] = useState<string>(
+  new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Kolkata',
+  }).format(today)
+)
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
 

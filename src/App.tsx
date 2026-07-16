@@ -33,10 +33,11 @@ import {
   Aperture,
   Menu,
   X,
+  FileText
 } from 'lucide-react';
 
-
 let hasSeeded = false;
+
 export default function App() {
   // --- Persistent Storage Logic ---
   // Load initial shoots from localStorage or fall back to high-fidelity mocks immediately
@@ -67,31 +68,39 @@ export default function App() {
   });
 
   // Sync shoots with Firestore when available, fall back to localStorage on permissions/connection errors
-// Sync shoots with Firestore
-useEffect(() => {
-  const q = collection(db, 'shoots');
-
-  const unsubscribe = onSnapshot(
-    q,
-    (snapshot) => {
+  useEffect(() => {
+    const q = collection(db, 'shoots');
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       const list: Shoot[] = [];
-
       snapshot.forEach((docSnap) => {
-        list.push({
-          id: docSnap.id,
-          ...(docSnap.data() as Omit<Shoot, 'id'>),
-        });
+        list.push({ ...docSnap.data() } as Shoot);
       });
-
-      setShoots(list);
-    },
-    (error) => {
+      
+      if (list.length === 0 && !hasSeeded) {
+        hasSeeded = true;
+        const mocks = getMockShoots();
+        // Seed state, localStorage, and attempt to seed Firestore
+        setShoots(mocks);
+        
+        mocks.forEach(async (shoot) => {
+          try {
+            await setDoc(doc(db, 'shoots', shoot.id), shoot);
+          } catch (err) {
+            handleFirestoreError(err, OperationType.WRITE, `shoots/${shoot.id}`, false);
+          }
+        });
+      } else {
+        setShoots(list);
+        
+      }
+    }, (error) => {
+      // Gracefully handle or log "Missing or insufficient permissions" or database not enabled
       handleFirestoreError(error, OperationType.LIST, 'shoots', false);
-    }
-  );
+    });
 
-  return () => unsubscribe();
-}, []);
+    return () => unsubscribe();
+  }, []);
+
   // Sync default gear checklist template with Firestore when available
   useEffect(() => {
     const unsubscribe = onSnapshot(doc(db, 'settings', 'gear'), (docSnap) => {

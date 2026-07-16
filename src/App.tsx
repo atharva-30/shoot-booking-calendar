@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Shoot, AppStats, ViewMode } from './types';
-import { exportToCSV } from './utils';
+import { exportToCSV, getMockShoots } from './utils';
 import { 
   collection, 
   onSnapshot, 

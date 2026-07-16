@@ -1,17 +1,14 @@
 import { Shoot, GearItem } from './types';
 
 export const DEFAULT_GEAR_LIST = [
-  'Camera (Primary)',
-  'Camera (Backup)',
-  'Lens 24-70mm f/2.8',
-  'Lens 50mm f/1.2',
-  'Drone + Controller',
-  'Gimbal (Ronin)',
-  'Tripod',
-  'LED Lights & Stands',
+  'Sony A7S3',
+  'Sony A7M3',
+  'Lens 24-50mm G f/2.8',
+  'Lens 35mm GM f/1.4',
+  'Avata 2',
+  'Gimbal',
   'Batteries (Fully Charged)',
   'Memory Cards (Formatted)',
-  'Wireless Mics (Rode Link)'
 ];
 
 export function getInitialGearChecklist(): GearItem[] {

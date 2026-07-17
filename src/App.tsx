@@ -417,9 +417,9 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-sm font-sans font-bold tracking-tight text-zinc-900 uppercase leading-none">
-                  Aperture Studio
+                  JOLTIK's STUDIO
                 </h1>
-                <p className="text-[10px] text-zinc-400 font-mono tracking-widest mt-1">PRODUCTION DESK</p>
+                <p className="text-[10px] text-zinc-400 font-mono tracking-widest mt-1">PRODUCTION CALENDAR</p>
               </div>
             </div>
 

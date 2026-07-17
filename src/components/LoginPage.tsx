@@ -17,7 +17,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-zinc-100">
       <div className="bg-white p-8 rounded-2xl shadow-lg text-center w-[350px]">
         <h1 className="text-2xl font-bold text-zinc-900 mb-2">
-          Aperture Studio
+          JOLTIK's STUDIO
         </h1>
 
         <p className="text-zinc-500 mb-6">

@@ -41,6 +41,21 @@ import {
 let hasSeeded = false;
 
 export default function App() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <LoginPage />;
+  }
+
+  // your existing App code below...
   // --- Persistent Storage Logic ---
   // Load initial shoots from localStorage or fall back to high-fidelity mocks immediately
   const [shoots, setShoots] = useState<Shoot[]>([]);

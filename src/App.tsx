@@ -36,7 +36,7 @@ import {
   X,
   FileText
 } from 'lucide-react';
-import Logo from '.src/assets/logo.png';
+import Logo from './src/assets/logo.png';
 
 let hasSeeded = false;
 

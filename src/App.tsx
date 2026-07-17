@@ -54,16 +54,16 @@ export default function App() {
       }
     }
     return [
-      'Camera (Primary)',
-      'Camera (Backup)',
-      'Lens 24-70mm f/2.8',
-      'Lens 50mm f/1.2',
-      'Drone + Controller',
-      'Gimbal (Ronin)',
-      'Tripod',
-      'LED Lights & Stands',
+      'Sony A7S3',
+      'Sony A7M3',
+      'G Lens 24-50mm f/2.8',
+      'GM Lens 35mm f/1.4',
+      'Sigma Lens 35mm f/1.4',
+      'Gimbal',
+      'Avata 2',
+      'Air 3S',
       'Batteries (Fully Charged)',
-      'Memory Cards (Formatted)'
+      'Memory Cards (Empty)'
     ];
   });
 

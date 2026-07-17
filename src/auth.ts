@@ -1,23 +1,6 @@
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { auth, googleProvider } from './firebase';
 
-export const loginWithGoogle = async () => {
-  const result = await signInWithPopup(auth, googleProvider);
-  return result.user;
-};
-
-export const logout = () => signOut(auth);
-
-import {
-  signInWithPopup,
-  signOut
-} from 'firebase/auth';
-
-import {
-  auth,
-  googleProvider
-} from './firebase';
-
 const ALLOWED_EMAILS = [
   'raoraneatharava@gmail.com',
   'atharvaraorane3010@gmail.com',
@@ -25,10 +8,7 @@ const ALLOWED_EMAILS = [
 ];
 
 export const loginWithGoogle = async () => {
-  const result = await signInWithPopup(
-    auth,
-    googleProvider
-  );
+  const result = await signInWithPopup(auth, googleProvider);
 
   const email = result.user.email;
 

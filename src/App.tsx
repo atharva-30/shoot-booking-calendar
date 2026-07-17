@@ -1,3 +1,5 @@
+import { useAuth } from './context/AuthContext';
+import LoginPage from './components/LoginPage';
 import React, { useState, useEffect, useMemo } from 'react';
 import { Shoot, AppStats, ViewMode } from './types';
 import { getMockShoots, exportToCSV } from './utils';

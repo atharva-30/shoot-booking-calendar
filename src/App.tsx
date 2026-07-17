@@ -366,7 +366,7 @@ export default function App() {
       <header className="lg:hidden bg-white border-b border-zinc-200 px-4 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center space-x-2">
          <img
-  src={logo}
+  src={Logo}
   alt="Joltik Logo"
   className="w-8 h-8 object-contain"
 />
@@ -418,7 +418,7 @@ export default function App() {
 <div className="hidden lg:flex items-center space-x-3 pb-4 border-b border-zinc-200">
   <div className="p-2 bg-zinc-900 rounded-xl shadow-sm">
     <img
-      src={logo}
+      src={Logo}
       alt="Joltik Logo"
       className="w-6 h-6 object-contain"
     />

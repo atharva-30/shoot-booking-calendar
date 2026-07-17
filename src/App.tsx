@@ -32,11 +32,11 @@ import {
   Settings, 
   LayoutDashboard, 
   Bell, 
-  Aperture,
   Menu,
   X,
   FileText
 } from 'lucide-react';
+import Logo from './assets/logo.png';
 
 let hasSeeded = false;
 
@@ -365,9 +365,13 @@ export default function App() {
       {/* Top Navigation Bar (Mobile Header) */}
       <header className="lg:hidden bg-white border-b border-zinc-200 px-4 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center space-x-2">
-          <Aperture className="w-6 h-6 text-zinc-800 animate-spin-slow" />
+         <img
+  src={logo}
+  alt="Joltik Logo"
+  className="w-8 h-8 object-contain"
+/>
           <span className="text-sm font-sans font-bold tracking-tight text-zinc-900 uppercase">
-            Aperture Studio
+            JOLTIK's STUDIO
           </span>
         </div>
 
@@ -411,18 +415,25 @@ export default function App() {
           
           <div className="space-y-8">
             {/* Desktop Brand Banner */}
-            <div className="hidden lg:flex items-center space-x-3 pb-4 border-b border-zinc-200">
-              <div className="p-2 bg-zinc-900 rounded-xl text-white shadow-sm">
-                <Aperture className="w-5 h-5 animate-spin-slow" />
-              </div>
-              <div>
-                <h1 className="text-sm font-sans font-bold tracking-tight text-zinc-900 uppercase leading-none">
-                  JOLTIK's STUDIO
-                </h1>
-                <p className="text-[10px] text-zinc-400 font-mono tracking-widest mt-1">PRODUCTION CALENDAR</p>
-              </div>
-            </div>
+<div className="hidden lg:flex items-center space-x-3 pb-4 border-b border-zinc-200">
+  <div className="p-2 bg-zinc-900 rounded-xl shadow-sm">
+    <img
+      src={logo}
+      alt="Joltik Logo"
+      className="w-6 h-6 object-contain"
+    />
+  </div>
 
+  <div>
+    <h1 className="text-sm font-sans font-bold tracking-tight text-zinc-900 uppercase leading-none">
+      JOLTIK REELOGRAPHY
+    </h1>
+
+    <p className="text-[10px] text-zinc-400 font-mono tracking-widest mt-1">
+      SHOOT MANAGEMENT SYSTEM
+    </p>
+  </div>
+</div>
             {/* Menu Items Links */}
             <div className="space-y-1.5">
               <span className="block text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-3 px-2">Menu Console</span>

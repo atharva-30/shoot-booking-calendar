@@ -430,7 +430,7 @@ export default function App() {
     </h1>
 
     <p className="text-[10px] text-zinc-400 font-mono tracking-widest mt-1">
-      SHOOT MANAGEMENT SYSTEM
+      SHOOTS CALENDAR
     </p>
   </div>
 </div>

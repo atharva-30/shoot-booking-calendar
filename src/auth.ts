@@ -6,7 +6,7 @@ const ALLOWED_EMAILS = [
   'atharvaraorane3010@gmail.com',
   'damalepriyadarshan@gmail.com',
   'frageditz6@gmail.com',
-  'iamjoltik69@gmail.com',
+  'manthanmanchekar17@gmail.com',
 ];
 
 export const loginWithGoogle = async () => {

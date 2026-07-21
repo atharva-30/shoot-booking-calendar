@@ -4,7 +4,7 @@ import { auth, googleProvider } from './firebase';
 const ALLOWED_EMAILS = [
   'raoraneatharava@gmail.com',
   'atharvaraorane3010@gmail.com',
-  'damalepriyadarshan@gmail.com',
+  'panchalomkar978@gmail.com',
   'frageditz6@gmail.com',
   'paritoshkhaire2006@gmail.com',
   'shravanraorane@gmail.com',

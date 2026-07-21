@@ -6,6 +6,7 @@ const ALLOWED_EMAILS = [
   'atharvaraorane3010@gmail.com',
   'panchalomkar978@gmail.com',
   'frageditz6@gmail.com',
+  'rajendramhatre343@gmail.com',
   'paritoshkhaire2006@gmail.com',
   'shravanraorane@gmail.com',
   'manthanmanchekar17@gmail.com',
